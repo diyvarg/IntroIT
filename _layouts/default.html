@@ -11,8 +11,10 @@
 
 <body>
 
-   {% include_relative src/0.md %}
-   {% include_relative src/1.md %}
+   {% assign files = site.static_files %}
+   {% for f in files %}
+     {{ f.path }}
+   {% endfor %}
 
 </body>
 
