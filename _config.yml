@@ -10,6 +10,8 @@ meta_author:
 markdown: kramdown
 permalink: pretty
 
+include:
+  - src/*.md
 
 #for posts
 defaults:

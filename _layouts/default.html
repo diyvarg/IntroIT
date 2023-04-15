@@ -13,12 +13,10 @@
  
    {% for file in site.static_files %}
       {% if file.path contains 'src' and file.path contains '.md' %}
-         {% capture file_content %}
-            {{ file.path | prepend: '/' | prepend: site.source | append: '.html' | markdownify }}
-         {% endcapture %}
-         {{ file_content }}
+         {{ file.content }}
       {% endif %}
    {% endfor %}
+
 
 </body>
 
