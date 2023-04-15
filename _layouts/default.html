@@ -11,7 +11,7 @@
 
 <body>
 
-   {% assign files = site.static_files | where: "post", true %}
+   <!-- {% assign files = site.static_files | where: "post", true %}
 
    {% for f in files %}
      {{ f.path }}
@@ -19,8 +19,17 @@
 
    <hr />
 
-   {% include_relative /src/0.md %}
+   {% include_relative /src/0.md %} -->
 
+
+   {% for file in site.static_files %}
+      {% if file.path contains 'src' and file.path contains '.md' %}
+         {% capture file_content %}
+            {{ file.path | prepend: '/' | prepend: site.source | append: '.html' | markdownify }}
+         {% endcapture %}
+         {{ file_content }}
+      {% endif %}
+   {% endfor %}
 
 </body>
 
