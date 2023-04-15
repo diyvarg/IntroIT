@@ -11,10 +11,16 @@
 
 <body>
 
-   {% assign files = site.static_files %}
+   {% assign files = site.static_files | where: "post", true %}
+
    {% for f in files %}
      {{ f.path }}
    {% endfor %}
+
+   <hr />
+
+   {% include_relative /src/0.md %}
+
 
 </body>
 
