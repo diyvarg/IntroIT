@@ -14,15 +14,12 @@
    {% for file in site.static_files %}
       {% if file.path contains 'src' and file.path contains '.md' %}
          {% capture file_content %}
-            {{ file.path | prepend: '/' | prepend: site.source | append: '.html' | markdownify }}
+            {{ file.path | prepend: '/' | prepend: site.source | markdownify }}
          {% endcapture %}
          {{ file_content }}
       {% endif %}
    {% endfor %}
-   
-   <hr />
-   
-   {% include_relative 'workspace/src/0.md' %} 
+    
 
 </body>
 
