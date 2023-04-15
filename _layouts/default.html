@@ -14,11 +14,9 @@
   
    
    
-   {% for file in site.static_files %}
-      {% if file.path contains 'src' and file.path contains '.md' %}
-         {{ file.content }}
-      {% endif %}
-   {% endfor %}
+  {% for file in site.src %}
+      {{ file.content }}
+  {% endfor %}
    
 
 
