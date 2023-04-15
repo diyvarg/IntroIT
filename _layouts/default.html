@@ -10,18 +10,7 @@
 </head>
 
 <body>
-
-   <!-- {% assign files = site.static_files | where: "post", true %}
-
-   {% for f in files %}
-     {{ f.path }}
-   {% endfor %}
-
-   <hr />
-
-   {% include_relative /src/0.md %} -->
-
-
+ 
    {% for file in site.static_files %}
       {% if file.path contains 'src' and file.path contains '.md' %}
          {% capture file_content %}
